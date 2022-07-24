@@ -8,5 +8,21 @@
 </head>
 <body>
     <h1>Vista Home</h1>
+
+    <table>
+        <tr>
+            <th>
+                Estudiantes
+            </th>
+        </tr>
+        {% for estudiante in Estudiante %}
+            <tr>
+                <td> {{estudiante.nombre}} </td>
+                <td> {{estudiante.apellido}} </td>
+                <td> {{estudiante.email}} </td>
+            </tr>
+        {% endfor %}
+
+    </table>
 </body>
 </html>
