@@ -1,0 +1,25 @@
+{% extends 'Home/padre.html' %}
+
+{% load static %}
+
+
+{% block comodin %}
+    
+<h1>Vista Materias</h1>
+
+<table>
+    <tr>
+        <th>
+            Materias
+        </th>
+    </tr>
+    {% for materia in Materia %}
+        <tr>
+            <td> {{materia.nombreMateria}} </td>
+            <td> {{materia.nivel}} </td>
+        </tr>
+    {% endfor %}
+
+</table>
+    
+{% endblock %}
