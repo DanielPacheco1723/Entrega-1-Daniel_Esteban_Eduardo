@@ -24,4 +24,12 @@ def EstudianteFormulario(request):
         return render(request,"inicio.html")
     return render(request, "estudianteForm.html")
 
-
+def PorfesorFormulario(request):
+    print('method:', request.method)
+    print('post', request.POST)
+    
+    if request.method == "POST":
+        Profesor = Profesores(nombre=request.POST['Nombre'], apellido=request.POST['Apellido'],materia=request.POST['Materia'], email=request.POST['Email'])
+        Profesor.save()
+        return render(request,"profesorForm.html")
+    return render(request, "ProfesorForm.html")
