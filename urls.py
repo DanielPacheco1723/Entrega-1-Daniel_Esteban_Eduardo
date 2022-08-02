@@ -7,4 +7,5 @@ urlpatterns = [
     path ('Materias/', materias,name = "materias"),
     path ('estudianteForm/', EstudianteFormulario, name="EstudianteFormulario") ,
     path ('profesorForm/', PorfesorFormulario, name="ProfesorFormulario") ,
+    path ('materiaForm/', MateriaFormulario, name="MateriaFormulario") ,
 ]

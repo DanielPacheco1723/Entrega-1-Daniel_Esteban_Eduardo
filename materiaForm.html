@@ -1,0 +1,11 @@
+{% extends 'Home/padre.html' %}
+{% load static %}
+{% block comodin %}
+    
+<form action="{% url 'MateriaFormulario' %}" method="POST">{% csrf_token %}
+        <p>Nombre materia <input type="text" name="NombreMateria"></p>
+        <p>Nivel: <input type="text" name="Nivel"></p>
+        <input type="submit" value="Enviar">
+</form>
+    
+{% endblock %}

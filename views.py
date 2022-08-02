@@ -31,5 +31,15 @@ def PorfesorFormulario(request):
     if request.method == "POST":
         Profesor = Profesores(nombre=request.POST['Nombre'], apellido=request.POST['Apellido'],materia=request.POST['Materia'], email=request.POST['Email'])
         Profesor.save()
-        return render(request,"profesorForm.html")
+        return render(request,"ProfesorForm.html")
     return render(request, "ProfesorForm.html")
+
+def MateriaFormulario(request):
+    print('method:', request.method)
+    print('post', request.POST)
+    
+    if request.method == "POST":
+        Materia = Materias(nombreMateria=request.POST['NombreMateria'], nivel=request.POST['Nivel'])
+        Materia.save()
+        return render(request,"inicio.html")
+    return render(request, "materiaForm.html")    
