@@ -4,25 +4,84 @@
 
 
 {% block comodin %}
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
     
-<h1>Vista Profesores</h1>
-
-<table>
-    <tr>
-        <th>
-            Profesores
-        </th>
-    </tr>
-    {% for profesor in Profesor %}
-        <tr>
-            <td> {{profesor.nombre}} </td>
-            <td> {{profesor.apellido}} </td>
-            <td> {{profesor.materia}} </td>
-            <td> {{profesor.email}} </td>
-        </tr>
-    {% endfor %}
-
-</table>
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 100px;
+    }
     
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+    </head>
+
+<body>
+    <div class="row">
+        <div class="column">
+            <table>
+                <tr>
+                    <th>
+                        Profesores
+                    </th>
+                </tr>
+                {% for profesor in Profesor %}
+                    <tr>
+                        <td> {{profesor.nombre}} </td>
+                        <td> {{profesor.apellido}} </td>
+                        <td> {{profesor.materia}} </td>
+                        <td> {{profesor.email}} </td>
+                    </tr>
+                {% endfor %}
+            
+            </table>
+        </div>
+
+        <div class="column">
+            <h4>Buscar profesor:</h4>
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+            method="GET">
+              <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar Profesor..." name="buscarDB">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit" >
+                    <i>Buscar</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+        
+            <table class="table table-bordered">
+                
+                {% for profesorbuscado in profesorbuscado %}
+                    <tr>
+                        <td> Nombre: </td>
+                        <td> Apellido </td>
+                        <td> Materia: </td>
+                        <td> Mail: </td>
+                    </tr>
+                    <tr>
+                        <td> {{profesorbuscado.nombre}} </td>
+                        <td> {{profesorbuscado.apellido}} </td>
+                        <td> {{profesorbuscado.materia}} </td>
+                        <td> {{profesorbuscado.email}} </td>
+                    </tr>
+                {% endfor %}
+            
+            </table>
+        </div>
+    </div>
+</body>
+
 {% endblock %}
