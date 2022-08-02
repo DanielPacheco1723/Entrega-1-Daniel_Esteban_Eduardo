@@ -5,4 +5,5 @@ urlpatterns = [
     path ('', index, name = "inicio"),
     path ('Profesores/', profesores, name = "profesores"),
     path ('Materias/', materias,name = "materias"),
+    path('busqueda/',busqueda, name = "busqueda")
 ]

@@ -1,0 +1,13 @@
+{% extends 'Home/padre.html' %}
+{% load static %}
+{% block comodin %}
+    
+<form action="{% url 'ProfesorFormulario' %}" method="POST">{% csrf_token %}
+        <p>Nombre Profesor: <input type="text" name="Nombre"></p>
+        <p>Apellido Profesor: <input type="text" name="Apellido"></p>
+        <p>Materia: <input type="text" name="Materia"></p>
+        <p>Email Profesor: <input type="text" name="Email"></p>
+        <input type="submit" value="Enviar">
+</form>
+    
+{% endblock %}
